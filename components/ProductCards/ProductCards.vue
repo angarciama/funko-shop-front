@@ -29,10 +29,14 @@ const props = defineProps({
   justify-content: space-around;
 }
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 300px;
   margin: 20px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--orange-color);
   border-radius: 5px;
 }
 .card-image {
@@ -44,14 +48,15 @@ const props = defineProps({
   padding: 10px;
 }
 .card-title {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 .card-description {
   margin-bottom: 10px;
 }
 .card-price {
+  font-size: 20px;
   font-weight: bold;
-  color: #007bff;
+  color: var(--orange-color);
 }
 </style>
