@@ -1,7 +1,7 @@
 <template>
   <div :class="props.propClassLayout">
     <header>
-      <div>Modulo administrativo</div>
+      <Header></Header>
     </header>
     <main>
       <slot name="mainSlot"></slot>
@@ -15,6 +15,8 @@
 </template>
 
 <script setup lang="ts">
+import Header from "~/components/Header/Header.vue";
+
 const props = defineProps({
   propClassLayout: {type: String, default: 'layout-component-container'}
 })
