@@ -3,6 +3,7 @@
       v-for="products in products"
       :key="products.id"
       class="general-user-card-container">
+    {{products}}
   </div>
 </template>
 
