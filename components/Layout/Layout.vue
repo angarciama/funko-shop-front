@@ -7,15 +7,14 @@
       <slot name="mainSlot"></slot>
     </main>
     <footer>
-      <div>Hace consumo de Random Data API
-        <a href="https://random-data-api.com/documentation" target="_blank">https://random-data-api.com/documentation</a>
-      </div>
+      <Footer></Footer>
     </footer>
   </div>
 </template>
 
 <script setup lang="ts">
 import Header from "~/components/Header/Header.vue";
+import Footer from "~/components/Footer/Footer.vue";
 
 const props = defineProps({
   propClassLayout: {type: String, default: 'layout-component-container'}
