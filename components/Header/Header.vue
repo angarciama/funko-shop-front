@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header-component-container">
     <img src="../../assets/img/funko-shop-logo.svg">
     <SearchBar></SearchBar>
     <ButtonNavigate route="products" buttonText="Productos"/>
@@ -13,3 +13,11 @@
 import SearchBar from "~/components/SearchBar/SearchBar.vue";
 import ButtonNavigate from "~/components/Buttons/ButtonNavigate.vue";
 </script>
+
+<style>
+.header-component-container {
+  display: flex;
+  align-items: center;
+  background: var(--primary-color);
+}
+</style>
