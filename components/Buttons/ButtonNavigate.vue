@@ -1,5 +1,5 @@
- <template>
-  <button @click="navigate">{{ buttonText }}</button>
+<template>
+  <button @click="navigate" :class="props.propClass">{{ buttonText }}</button>
 </template>
 
 <script setup lang="ts">
@@ -14,7 +14,8 @@ const props = defineProps({
   buttonText: {
     type: String,
     default: 'Volver'
-  }
+  },
+  propClass: {type: String, default: 'button-navigate-container'}
 })
 
 const router = useRouter()
@@ -28,23 +29,12 @@ const navigate = () => {
 }
 </script>
 
-<style scoped>
-button {
-  border: 1px solid black;
-  border-radius: 10px;
+<style>
+.button-navigate-container {
   height: 50px;
-  background-color: white;
-  color: black;
+  color: var(--orange-color);
   font-weight: bold;
   cursor: pointer;
-  padding: 0 20px;
-}
-button:hover {
-  background-color: black;
-  color: white;
-}
-button:active {
-  background-color: black;
-  color: white;
+  padding: 0 10px;
 }
 </style>

@@ -32,22 +32,19 @@ export default {
 .search-bar {
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
 }
 .search-input {
-  padding: 0.5rem;
-  font-size: 1rem;
+  height: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 1rem;
 }
 .search-results {
   list-style-type: none;
   padding: 0;
 }
 .search-result {
-  padding: 0.5rem;
   background-color: #f9f9f9;
   border-radius: 5px;
-  margin-bottom: 0.5rem;
 }
 </style>
