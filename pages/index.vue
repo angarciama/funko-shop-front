@@ -17,7 +17,6 @@ import ProductCards from '~/components/ProductCards/ProductCards.vue'
 const products = ref<ProductsModel[]>([])
 onMounted(async () => {
   try {
-    console.log('productsStore().generalProductsModel: ', productsStore().generalProductsModel)
     products.value = productsStore().generalProductsModel
     if (products.value.length == 0) {
       products.value = await allProducts()

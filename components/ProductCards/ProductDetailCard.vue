@@ -1,6 +1,6 @@
 <template>
-  <div v-if="products" class="product-cards">
-    <div v-for="product in products" :key="product.id" class="card">
+  <div class="product-cards">
+    <div class="card">
       <img :src="product.image" :alt="product.product_name" class="card-image">
       <div class="card-body">
         <h2 class="card-title">{{ product.product_name }}</h2>
@@ -8,7 +8,7 @@
         <p class="card-price">{{ product.price }} €</p>
       </div>
       <button class="card-button">Añadir al carrito</button>
-      <ButtonNavigate :route="`products/product-detail/${product.id}`" buttonText="Ver detalles"></ButtonNavigate>
+      <ButtonNavigate route="back" buttonText="Volver"></ButtonNavigate>
     </div>
   </div>
 </template>
@@ -17,9 +17,10 @@
 import ProductsModel from '~/api/models/products/productsModel'
 import ButtonNavigate from '~/components/Buttons/ButtonNavigate.vue'
 
+
 const props = defineProps({
-  products: {
-    type: Array as () => ProductsModel[],
+  product: {
+    type: Object as () => ProductsModel,
     required: true
   }
 })
