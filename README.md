@@ -1,75 +1,40 @@
-# Nuxt 3 Minimal Starter
+# USERS RANDOM DATA API
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+App desarrollada en el framework Nuxt 3. Es un proyecto base de frontend para una web ecommerce.
 
-## Setup
+## Pre-requisitos
 
-Make sure to install the dependencies:
+* Ejecutar proyecto backend rama feature/refactor: https://github.com/angarciama/grupo_9_proyectoIntegrador.git
+* Node v18.16.1
+* NPM v9.5.1
 
-```bash
-# npm
-npm install
+## Instalación
+Instalar las dependencias del archivo package.json
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```Bash
+$ npm install
 ```
 
-## Development Server
+## Variables de entorno
+.env: hacer una copia del archivo .env.example y nombrarlo .env
 
-Start the development server on `http://localhost:3000`:
+API_BACK_URL= Donde se esta ejecutando el proyecto backend
 
-```bash
-# npm
-npm run dev
+ejemplo:
 
-# pnpm
-pnpm run dev
+API_BACK_URL='https://localhost:3000'
 
-# yarn
-yarn dev
+## Despliegue
 
-# bun
-bun run dev
+### Local
+```Bash
+$ npm run dev
+```
+### Red local
+```Bash
+$ npm run dev -- --host 0.0.0.0
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Abrir aplicación
+Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
+http://localhost:3000/
