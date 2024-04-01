@@ -35,6 +35,7 @@ const category_user_id = ref(2)
 const errorMessage = ref('')
 const successMessage = ref('')
 
+const router = useRouter()
 const user = ref<UserModel>(new UserModel(undefined, '', '', '', '', '', 2))
 const registerUser = async () => {
   user.value.full_name = fullName.value
@@ -46,8 +47,7 @@ const registerUser = async () => {
   if (user.value) {
     try {
       await createUser(user.value)
-      errorMessage.value = ''
-      successMessage.value = 'Usuario registrado exitosamente'
+      await router.push('/users/login')
     } catch (error) {
       errorMessage.value = 'Error al registrar usuario'
     }
