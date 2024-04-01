@@ -46,7 +46,6 @@ const registerUser = async () => {
   if (user.value) {
     try {
       await createUser(user.value)
-      console.log('user.value: ', user.value)
       errorMessage.value = ''
       successMessage.value = 'Usuario registrado exitosamente'
     } catch (error) {
