@@ -1,5 +1,5 @@
 import type UserModel from "~/api/models/Users/UserModel"
-export const createUser = async (): Promise<UserModel> => {
+export const createUser = async (userData: UserModel): Promise<UserModel> => {
     try {
         const config = useRuntimeConfig()
 
@@ -10,6 +10,7 @@ export const createUser = async (): Promise<UserModel> => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify(userData)
             }
         )
         

@@ -24,38 +24,34 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { createUser } from '~/api/controllers/users/user.controller'
+import UserModel from '~/api/models/Users/UserModel'
 
 const fullName = ref('')
 const userName = ref('')
 const email = ref('')
 const password = ref('')
+const profile_picture = ref('http://localhost:3000/_nuxt/assets/img/users/user.webp')
+const category_user_id = ref(2)
 const errorMessage = ref('')
 const successMessage = ref('')
 
+const user = ref<UserModel>(new UserModel(undefined, '', '', '', '', '', 2))
 const registerUser = async () => {
-  try {
-    const newUser = await createUser({
-      full_name: fullName.value,
-      user_name: userName.value,
-      email: email.value,
-      password: password.value,
-      profile_picture: '', // You may add profile picture if needed
-      category_user_id: 0 // You may need to specify category user ID
-    })
-
-    // Reset form fields
-    fullName.value = ''
-    userName.value = ''
-    email.value = ''
-    password.value = ''
-
-    // Show success message
-    successMessage.value = 'Usuario registrado correctamente!'
-    errorMessage.value = ''
-  } catch (error) {
-    // Show error message
-    errorMessage.value = 'Error al registrar el usuario. Por favor, inténtelo de nuevo.'
-    console.error('Error registering user:', error)
+  user.value.full_name = fullName.value
+  user.value.user_name = userName.value
+  user.value.email = email.value
+  user.value.password = password.value
+  user.value.profile_picture = profile_picture.value
+  user.value.category_user_id = category_user_id.value
+  if (user.value) {
+    try {
+      await createUser(user.value)
+      console.log('user.value: ', user.value)
+      errorMessage.value = ''
+      successMessage.value = 'Usuario registrado exitosamente'
+    } catch (error) {
+      errorMessage.value = 'Error al registrar usuario'
+    }
   }
 }
 </script>
