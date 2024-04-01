@@ -58,7 +58,7 @@ export const updateProduct = async (productData: ProductsModel): Promise<Product
         const response = await fetch(
             config.public.apiBackUrl + '/api/products/' + productData.id + '/update',
             {
-                method: 'POST',
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },

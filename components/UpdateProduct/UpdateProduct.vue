@@ -28,7 +28,6 @@
 import { ref } from 'vue'
 import { updateProduct } from '~/api/controllers/products/products.controller'
 import ProductsModel from '~/api/models/products/ProductsModel'
-import {useRoute} from "vue-router";
 
 
 const productName = ref('')
@@ -40,11 +39,12 @@ const errorMessage = ref('')
 const successMessage = ref('')
 
 const product = ref<ProductsModel>(new ProductsModel(undefined, '', '', '', 0, 0))
-const router = useRoute()
+const route = useRoute()
+const router = useRouter()
 
 const createProductSubmit = async () => {
   try {
-    product.value.id = router.params.key
+    product.value.id = Number(route.params.key)
     product.value.product_name = productName.value
     product.value.product_description = productDescription.value
     product.value.image = productImage.value
@@ -53,7 +53,7 @@ const createProductSubmit = async () => {
 
     if (product.value) {
       await updateProduct(product.value)
-      await router.push('/products')
+      await router.push('/product-detail/' + route.params.key)
     }
   } catch (error) {
     errorMessage.value = 'Error al crear producto'
