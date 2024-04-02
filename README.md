@@ -38,3 +38,14 @@ $ npm run dev -- --host 0.0.0.0
 ### Abrir aplicación
 Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
 http://localhost:3000/
+
+### Crear producto
+Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
+http://localhost:3000/products/create-product
+
+### Editar producto
+Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
+http://localhost:3000/products/update-product/id
+
+### Nota
+Este es solo un proyecto base, de momento falta mejorar estetica, validaciones, almacenamiento de datos en el store, vistas, etc
